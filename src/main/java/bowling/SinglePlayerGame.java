@@ -40,15 +40,15 @@ public class SinglePlayerGame {
                 if (mancheEnCours == 0 && nombreDeQuillesAbattues == 10) {
                     lancer[0] = nombreDeQuillesAbattues;
                     lancer[1] = 0;
-                    manche[tour].AjoutScore(lancer);
+                    manche[tour].AjoutScore(lancer); // NullPointerException mais je ne sais pas comment régler ce problème.
                     tour += 1;
                 } else if (mancheEnCours == 0) {
-                   lancer[0] = nombreDeQuillesAbattues;
+                    lancer[0] = nombreDeQuillesAbattues;
                     mancheEnCours = 1;
                 } else {
                     lancer[1] = nombreDeQuillesAbattues;
                     mancheEnCours = 0;
-                    manche[tour].AjoutScore(lancer);
+                    manche[tour].AjoutScore(lancer); // NullPointerException mais je ne sais pas comment régler ce problème.
                     tour += 1;
                 }
             } else {
@@ -70,6 +70,7 @@ public class SinglePlayerGame {
 	 * @return Le score du joueur
 	 */
 	public int score() {
+            System.out.println("Je suis aussi passé ici !");
             int[] enCasSpare = new int[2];
             score = manche[0].getScore();
             for(int i = 1 ; i < manche.length ; i++) {
